@@ -1,4 +1,0 @@
-# =========================
-# Infrastructure Dictionary
-# =========================
-InfrastructureDict = {'service': 'aws-golang-kinesis-to-elasticsearch', 'frameworkVersion': '>=1.28.0 <2.0.0', 'provider': {'name': 'aws', 'runtime': 'go1.x', 'environment': {'ELASTICSEARCH_HOST': 'my.elastic.host', 'ELASTICSEARCH_SCHEMA': 'http'}}, 'functions': {'streamer': {'handler': 'bin/stream', 'events': [{'stream': {'type': 'kinesis', 'arn': 'arn:aws:kinesis:<region>:<accountID>:stream/<streamname>', 'batchSize': 100, 'startingPosition': 'TRIM_HORIZON', 'enabled': True}}]}}, 'package': {'exclude': ['./**'], 'include': ['./bin/**']}}

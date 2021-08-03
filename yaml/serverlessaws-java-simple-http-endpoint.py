@@ -1,4 +1,0 @@
-# =========================
-# Infrastructure Dictionary
-# =========================
-InfrastructureDict = {'service': 'aws-java-simple-http-endpoint', 'frameworkVersion': '>=1.2.0 <2.0.0', 'provider': {'name': 'aws', 'runtime': 'java8'}, 'package': {'artifact': 'build/distributions/aws-java-simple-http-endpoint.zip'}, 'functions': {'currentTime': {'handler': 'com.serverless.Handler', 'events': [{'http': {'path': 'ping', 'method': 'get'}}]}}}

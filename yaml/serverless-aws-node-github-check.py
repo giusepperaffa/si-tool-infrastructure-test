@@ -1,4 +1,0 @@
-# =========================
-# Infrastructure Dictionary
-# =========================
-InfrastructureDict = {'service': 'serverless-github-check', 'plugins': ['serverless-webpack', 'serverless-offline'], 'custom': {'webpack': {'webpackConfig': './webpack.config.js', 'includeModules': True}}, 'provider': {'name': 'aws', 'runtime': 'nodejs12.x', 'profile': 'personal', 'region': 'eu-west-1', 'environment': {'GITHUB_TOKEN': '${ssm:githubToken}'}}, 'functions': {'githubCheck': {'handler': 'handler.githubCheck', 'events': [{'http': {'path': 'webhook', 'method': 'post', 'cors': True}}]}}}

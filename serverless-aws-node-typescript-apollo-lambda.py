@@ -1,0 +1,4 @@
+# =========================
+# Infrastructure Dictionary
+# =========================
+InfrastructureDict = {'service': {'name': 'aws-node-typescript-apollo-lambda'}, 'plugins': ['serverless-dotenv-plugin', 'serverless-offline', 'serverless-plugin-typescript'], 'provider': {'name': 'aws', 'runtime': 'nodejs12.x', 'timeout': 15, 'apiKeys': [{'name': 'lambdaApolloKey', 'value': '${env:APOLLO_LAMBDA_KEY}'}]}, 'functions': {'graphql': {'handler': 'src/handler.graphqlHandler', 'events': [{'http': {'private': True, 'path': 'graphql', 'method': 'post'}}, {'http': {'private': True, 'path': 'graphql', 'method': 'get'}}]}}}

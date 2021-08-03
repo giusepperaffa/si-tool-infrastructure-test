@@ -1,0 +1,4 @@
+# =========================
+# Infrastructure Dictionary
+# =========================
+InfrastructureDict = {'service': 'aws-golang-s3-file-replicator', 'frameworkVersion': '>=1.28.0 <2.0.0', 'custom': {'inputBucket': 'replicator-input-101', 'outputBucket': 'replicator-output-101'}, 'provider': {'name': 'aws', 'runtime': 'go1.x', 'stage': 'dev', 'region': 'ap-northeast-1', 'memorySize': 128, 'timeout': 30, 'iamRoleStatements': [{'Effect': 'Allow', 'Action': ['s3:*'], 'Resource': 'arn:aws:s3:::${self:custom.outputBucket}/*'}, {'Effect': 'Allow', 'Action': ['s3:*'], 'Resource': 'arn:aws:s3:::${self:custom.inputBucket}/*'}]}, 'package': {'exclude': ['./**'], 'include': ['./bin/**']}, 'functions': {'replicate': {'handler': 'bin/replicator', 'environment': {'OUTPUT_BUCKET': '${self:custom.outputBucket}'}, 'events': [{'s3': {'bucket': '${self:custom.inputBucket}', 'existing': True, 'event': 's3:ObjectCreated:*'}}]}}}

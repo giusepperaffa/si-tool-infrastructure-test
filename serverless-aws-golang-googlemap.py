@@ -1,0 +1,4 @@
+# =========================
+# Infrastructure Dictionary
+# =========================
+InfrastructureDict = {'service': 'gomapservice', 'frameworkVersion': '>=1.28.0 <2.0.0', 'provider': {'name': 'aws', 'runtime': 'go1.x', 'environment': {'GOOGLE_API_KEY': 'AIzaXXXX'}, 'region': 'ap-southeast-1'}, 'package': {'exclude': ['./**'], 'include': ['./bin/**']}, 'functions': {'getgeolocation': {'handler': 'bin/getgeolocation', 'events': [{'http': {'path': 'geolocation', 'method': 'get', 'request': {'parameters': {'querystrings': {'address': True}}}}}]}, 'getnearbylocation': {'handler': 'bin/getnearbylocation', 'events': [{'http': {'path': 'nearbylocation', 'method': 'get', 'request': {'parameters': {'querystrings': {'location': True, 'radius': True, 'name': False, 'type': False}}}}}]}, 'getgeodetail': {'handler': 'bin/getgeodetail', 'events': [{'http': {'path': 'geodetail', 'method': 'get', 'request': {'parameters': {'querystrings': {'placeid': True}}}}}]}}}

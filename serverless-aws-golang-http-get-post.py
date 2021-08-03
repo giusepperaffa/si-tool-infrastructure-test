@@ -1,0 +1,4 @@
+# =========================
+# Infrastructure Dictionary
+# =========================
+InfrastructureDict = {'service': 'goservice', 'frameworkVersion': '>=1.28.0 <2.0.0', 'provider': {'name': 'aws', 'runtime': 'go1.x'}, 'package': {'individually': True, 'exclude': ['./**']}, 'functions': {'get': {'handler': 'bin/getBin', 'package': {'include': ['./bin/getBin']}, 'events': [{'http': {'path': 'get/{name}', 'method': 'get', 'request': {'parameter': {'paths': {'name': True}}}}}]}, 'getquery': {'handler': 'bin/getQueryBin', 'package': {'include': ['./bin/getQueryBin']}, 'events': [{'http': {'path': 'getQ', 'method': 'get', 'request': {'parameters': {'querystrings': {'name': True}}}}}]}, 'post': {'handler': 'bin/postBin', 'package': {'include': ['./bin/getQueryBin']}, 'events': [{'http': {'path': 'post', 'method': 'post'}}]}}}

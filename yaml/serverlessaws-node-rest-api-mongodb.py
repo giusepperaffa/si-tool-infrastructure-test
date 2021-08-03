@@ -1,0 +1,4 @@
+# =========================
+# Infrastructure Dictionary
+# =========================
+InfrastructureDict = {'service': 'aws-node-rest-api-mongodb', 'provider': {'name': 'aws', 'runtime': 'nodejs12.x'}, 'functions': {'createUser': {'handler': 'handler.createUser', 'events': [{'http': {'path': 'user', 'method': 'post', 'cors': True}}]}, 'updateUser': {'handler': 'handler.updateUser', 'events': [{'http': {'path': 'user/{id}', 'method': 'put', 'cors': True}}]}, 'deleteUser': {'handler': 'handler.deleteUser', 'events': [{'http': {'path': 'user/{id}', 'method': 'delete', 'cors': True}}]}, 'user': {'handler': 'handler.user', 'events': [{'http': {'path': 'user/{id}', 'method': 'get', 'cors': True}}]}}}
